@@ -1,6 +1,6 @@
 FROM python:3-alpine
 
-RUN apk --no-cache update && apk add bash
+RUN apk --no-cache update && apk add bash make
 
 COPY . /src/app
 WORKDIR /src/app
