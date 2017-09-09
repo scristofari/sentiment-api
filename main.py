@@ -12,10 +12,10 @@ def submitted_text():
     if not text:
         raise BadRequest(description="failed to get the text.")
 
-    result = _sentiment(text)
+    polarity, subjectivity = _sentiment(text)
     return json.dumps({
-        'polarity': result[0],
-        'subjectivity': result[1]
+        'polarity': polarity,
+        'subjectivity': subjectivity
     })
 
 

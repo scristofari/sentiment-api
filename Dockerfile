@@ -6,10 +6,10 @@ COPY . /src/app
 WORKDIR /src/app
 
 RUN pip install -r requirements.txt
-RUN python -m textblob.download_corpora
 
 RUN adduser -D sentiment
 USER sentiment
+RUN python -m textblob.download_corpora
 
 CMD python main.py
 
